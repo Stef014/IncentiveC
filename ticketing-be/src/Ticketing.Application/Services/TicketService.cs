@@ -30,6 +30,11 @@ public class TicketService : ITicketService
         return await _ticketRepository.CreateAsync(ticket);
     }
 
+    public async Task<Ticket> UpdateTicketAsync(Ticket ticket)
+    {
+        return await _ticketRepository.UpdateAsync(ticket);
+    }
+
     public async Task AddCommentAsync(Guid ticketId, Comment comment)
     {
         var ticket = await _ticketRepository.GetByIdAsync(ticketId);

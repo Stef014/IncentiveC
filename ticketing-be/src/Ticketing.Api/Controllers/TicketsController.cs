@@ -68,4 +68,23 @@ public class TicketsController : ControllerBase
             return BadRequest(ex.Message);
         }
     }
+
+    [HttpPatch("{id:guid}/status")]
+    public async Task<ActionResult<Comment>> UpdateStatus([FromRoute] Guid id, [FromBody] bool status)
+    {
+        try {
+            var ticket = await _ticketService.GetTicketByIdAsync(id);
+            if (ticket is null)
+                return NotFound();
+
+            ticket.Status = status ? Domain.Enums.TicketStatus.Closed : Domain.Enums.TicketStatus.Open;
+            await _ticketService.UpdateTicketAsync(ticket);
+
+            return NoContent();
+        }
+        catch (Exception ex)
+        {
+            return BadRequest(ex.Message);
+        }
+    }
 }
