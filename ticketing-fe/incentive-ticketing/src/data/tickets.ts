@@ -1,0 +1,142 @@
+import type { Ticket } from "@/models/ticket";
+
+export const tickets: Ticket[] = [
+  {
+    id: "1",
+    title: "Login page throws 500 on invalid credentials",
+    status: 1,
+    createdAt: "2026-03-01T08:00:00Z",
+  },
+  {
+    id: "2",
+    title: "Dashboard graphs not rendering on Safari",
+    status: 1,
+    createdAt: "2026-03-02T09:15:00Z",
+  },
+  {
+    id: "3",
+    title: "Export to CSV produces empty file",
+    status: 0,
+    createdAt: "2026-03-03T10:30:00Z",
+  },
+  {
+    id: "4",
+    title: "User profile picture upload fails for PNG files",
+    status: 1,
+    createdAt: "2026-03-04T11:00:00Z",
+  },
+  {
+    id: "5",
+    title: "Notification emails not being sent on ticket creation",
+    status: 1,
+    createdAt: "2026-03-05T12:45:00Z",
+  },
+  {
+    id: "6",
+    title: "Search results pagination broken after page 3",
+    status: 0,
+    createdAt: "2026-03-06T08:30:00Z",
+  },
+  {
+    id: "7",
+    title: "Dark mode toggle resets on page refresh",
+    status: 1,
+    createdAt: "2026-03-07T09:00:00Z",
+  },
+  {
+    id: "8",
+    title: "Ticket status dropdown not saving selection",
+    status: 0,
+    createdAt: "2026-03-08T14:20:00Z",
+  },
+  {
+    id: "9",
+    title: "Comment timestamps showing incorrect timezone",
+    status: 1,
+    createdAt: "2026-03-09T10:10:00Z",
+  },
+  {
+    id: "10",
+    title: "Mobile layout overlaps on screen widths below 375px",
+    status: 1,
+    createdAt: "2026-03-10T11:30:00Z",
+  },
+  {
+    id: "11",
+    title: "API returns 404 for deleted tickets instead of 410",
+    status: 0,
+    createdAt: "2026-03-11T13:00:00Z",
+  },
+  {
+    id: "12",
+    title: "Filter by date range ignores end date",
+    status: 1,
+    createdAt: "2026-03-12T08:45:00Z",
+  },
+  {
+    id: "13",
+    title: "Slow load time on tickets list with 500+ entries",
+    status: 1,
+    createdAt: "2026-03-13T09:30:00Z",
+  },
+  {
+    id: "14",
+    title: "Tooltip text cut off on small screen sizes",
+    status: 0,
+    createdAt: "2026-03-14T15:00:00Z",
+  },
+  {
+    id: "15",
+    title: "Session expires too quickly on inactivity",
+    status: 1,
+    createdAt: "2026-03-15T10:00:00Z",
+  },
+  {
+    id: "16",
+    title: "Duplicate ticket created on double-click submit",
+    status: 0,
+    createdAt: "2026-03-16T11:15:00Z",
+  },
+  {
+    id: "17",
+    title: "Error boundary missing on ticket detail page",
+    status: 1,
+    createdAt: "2026-03-17T12:00:00Z",
+  },
+  {
+    id: "18",
+    title: "Back button on ticket detail navigates to wrong page",
+    status: 1,
+    createdAt: "2026-03-18T09:45:00Z",
+  },
+  {
+    id: "19",
+    title: "Keyboard navigation skips comment input field",
+    status: 0,
+    createdAt: "2026-03-19T14:30:00Z",
+  },
+  {
+    id: "20",
+    title: "Role-based access not enforced on admin routes",
+    status: 1,
+    createdAt: "2026-03-20T08:00:00Z",
+  },
+  {
+    id: "21",
+    title: "Ticket title allows over 255 characters without validation",
+    status: 0,
+    createdAt: "2026-03-21T10:30:00Z",
+  },
+  {
+    id: "22",
+    title: "Long ticket descriptions overflow card container",
+    status: 1,
+    createdAt: "2026-03-22T13:15:00Z",
+  },
+  {
+    id: "23",
+    title: "Favicon not displaying in production build",
+    status: 0,
+    createdAt: "2026-03-23T16:00:00Z",
+  },
+];
