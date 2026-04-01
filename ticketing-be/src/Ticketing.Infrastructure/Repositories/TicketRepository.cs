@@ -34,4 +34,10 @@ public class TicketRepository : ITicketRepository
         await _context.SaveChangesAsync();
         return ticket;
     }
+
+    public async Task AddCommentAsync(Guid ticketId, Comment comment)
+    {
+        _context.Comments.Add(comment);
+        await _context.SaveChangesAsync();
+    }
 }

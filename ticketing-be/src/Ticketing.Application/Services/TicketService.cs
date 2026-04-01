@@ -29,4 +29,20 @@ public class TicketService : ITicketService
         ticket.CreatedAt = DateTime.UtcNow;
         return await _ticketRepository.CreateAsync(ticket);
     }
+
+    public async Task AddCommentAsync(Guid ticketId, Comment comment)
+    {
+        var ticket = await _ticketRepository.GetByIdAsync(ticketId);
+        
+        if (ticket is null)
+        {
+            throw new Exception("Ticket not found");
+        }
+        
+        comment.Id = Guid.NewGuid();
+        comment.TicketId = ticketId;
+        comment.CreatedAt = DateTime.UtcNow;
+        
+        await _ticketRepository.AddCommentAsync(ticketId, comment);
+    }
 }
