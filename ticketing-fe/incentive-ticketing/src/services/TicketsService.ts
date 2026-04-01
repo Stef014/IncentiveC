@@ -8,6 +8,14 @@ class TicketsService implements ITicketsService {
   constructor(ticketsRepository: ITicketsRepository) {
     this.ticketsRepository = ticketsRepository;
   }
+  async createTicket(title: string, description: string): Promise<Ticket> {
+    try {
+      return await this.ticketsRepository.createTicket(title, description);
+    } catch (error) {
+      console.error("Error creating ticket:", error);
+      throw error;
+    }
+  }
 
   async getTickets(): Promise<Ticket[] | null> {
     try {
