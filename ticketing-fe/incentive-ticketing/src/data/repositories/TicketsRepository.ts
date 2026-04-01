@@ -13,8 +13,20 @@ class TicketsRepository implements ITicketsRepository {
     });
     return response.data;
   }
-  async getTickets(): Promise<Ticket[]> {
+  async getTickets(): Promise<Ticket[] | null> {
     const response = await axios.get<Ticket[]>(`${apiBaseUrl}/tickets`);
+    return response.data;
+  }
+
+  async updateTicketStatus(id: string, status: boolean): Promise<Ticket> {
+    console.log(`Updating ticket ${id} status to ${status}`);
+    const response = await axios.patch<Ticket>(
+      `${apiBaseUrl}/tickets/${id}/status`,
+      status,
+      {
+        headers: { "Content-Type": "application/json" },
+      },
+    );
     return response.data;
   }
 }

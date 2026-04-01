@@ -25,6 +25,15 @@ class TicketsService implements ITicketsService {
       throw error;
     }
   }
+
+  async updateTicketStatus(id: string, status: boolean): Promise<Ticket> {
+    try {
+      return await this.ticketsRepository.updateTicketStatus(id, status);
+    } catch (error) {
+      console.error('Error updating ticket status:', error);
+      throw error;
+    }
+  }
 }
 
 export default TicketsService;
