@@ -1,6 +1,17 @@
 <script setup lang="ts">
+import { ref, onMounted } from 'vue'
 import TicketList from "@/components/TicketList.vue";
-import { tickets } from "@/data/tickets";
+import TicketsService from "@/services/TicketsService";
+import TicketsRepository from "@/data/repositories/TicketsRepository";
+import type { Ticket } from "@/models/ticket";
+
+const ticketsService = new TicketsService(new TicketsRepository())
+
+const tickets = ref<Ticket[]>([])
+
+onMounted(async () => {
+  tickets.value = await ticketsService.getTickets() ?? []
+})
 </script>
 
 <template>
