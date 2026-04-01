@@ -25,6 +25,7 @@ public class TicketService : ITicketService
     public async Task<Ticket> CreateTicketAsync(Ticket ticket)
     {
         ticket.Id = Guid.NewGuid();
+        ticket.Status = Domain.Enums.TicketStatus.Open;
         ticket.CreatedAt = DateTime.UtcNow;
         return await _ticketRepository.CreateAsync(ticket);
     }
