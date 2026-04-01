@@ -22,3 +22,45 @@ This solution does not implement basic security.
 Authentication and the use of an API key could be introduced to enhance it in this regard.
 
 Frontend features such as the capturing of comments could also be improved.
+
+## Setup Instructions
+
+### Backend
+
+Navigate to the root directory:
+
+```bash
+cd ticketing-be
+```
+
+```bash
+dotnet build
+```
+
+Navigate to the API directory:
+
+```bash
+cd src/Ticketing.Api
+```
+
+```bash
+dotnet run
+```
+
+> Requires the .NET SDK to be installed.
+
+### Frontend
+
+Navigate to the frontend directory:
+
+```bash
+cd ticketing-fe/incentive-ticketing
+```
+
+```bash
+npm install
+```
+
+```bash
+npm run dev
+```
